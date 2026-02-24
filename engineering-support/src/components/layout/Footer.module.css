@@ -1,0 +1,23 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  color: var(--muted);
+}
+
+.inner {
+  width: min(var(--container), calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.meta {
+  font-size: 12px;
+}

@@ -1,0 +1,102 @@
+/* src/components/workspace/ProjectWorkspace.module.css */
+
+.workspace {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: calc(100vh - 120px);
+  gap: 14px;
+}
+
+.leftColumn {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 14px;
+  position: sticky;
+  top: 12px;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.outlineHeader {
+  margin-bottom: 12px;
+}
+
+.outlineTitle {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.outlineSubtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.rightColumn {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 16px;
+  min-width: 0;
+}
+
+.rightHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.rightTitle {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.rightSubtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.primaryButton, .secondaryButton {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+}
+
+.errorBox {
+  margin-top: 12px;
+  border: 1px solid rgba(255,80,80,0.35);
+  background: rgba(255,80,80,0.10);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.loadingBox {
+  margin-top: 16px;
+  opacity: 0.85;
+}
+
+@media (max-width: 980px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  .leftColumn {
+    position: relative;
+    height: auto;
+  }
+}

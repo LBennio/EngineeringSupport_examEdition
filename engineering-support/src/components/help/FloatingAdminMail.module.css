@@ -1,0 +1,15 @@
+.floatingButton {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+.floatingButton:hover {
+  transform: translateY(-1px);
+}

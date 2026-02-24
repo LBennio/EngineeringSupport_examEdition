@@ -1,0 +1,46 @@
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0 0 14px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0 18px;
+  opacity: 0.95;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.primaryLink, .secondaryLink {
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+
+.secondaryLink {
+  opacity: 0.9;
+}

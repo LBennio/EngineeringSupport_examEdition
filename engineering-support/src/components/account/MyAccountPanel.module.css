@@ -1,0 +1,119 @@
+
+.wrapper {
+  max-width: 1100px;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.subtitle {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.alertError {
+  margin-top: 12px;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  background: rgba(255, 80, 80, 0.10);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 16px;
+  min-height: 240px;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.profileGrid {
+  display: grid;
+  gap: 8px;
+  opacity: 0.95;
+}
+
+.muted {
+  opacity: 0.8;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.secondaryButton,
+.dangerButton {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.dangerButton {
+  border: 1px solid rgba(255, 80, 80, 0.35);
+  background: rgba(255, 80, 80, 0.12);
+}
+
+.secondaryButton:disabled,
+.dangerButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.devBadge {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(255, 200, 80, 0.35);
+  background: rgba(255, 200, 80, 0.10);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

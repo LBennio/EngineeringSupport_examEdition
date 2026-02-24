@@ -1,0 +1,66 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 15, 25, 0.78);
+  -webkit-backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  width: min(var(--container), calc(100% - 32px));
+  margin: 0 auto;
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cta {
+  padding: 10px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ctaOutline {
+  padding: 10px 12px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.ctaOutline:hover {
+  border-color: rgba(231, 238, 252, 0.25);
+}

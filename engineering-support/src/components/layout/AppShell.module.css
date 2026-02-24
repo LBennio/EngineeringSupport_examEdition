@@ -1,0 +1,17 @@
+
+.shell {
+  display: flex;
+  min-height: calc(100vh - 0px);
+}
+
+.mainArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contentArea {
+  padding: 22px 22px 60px;
+  max-width: 1200px;
+}

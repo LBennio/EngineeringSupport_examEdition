@@ -1,0 +1,134 @@
+.wrapper {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.header {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.title {
+  margin: 0 0 var(--space-1);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-md);
+}
+
+.cardTitle {
+  margin: 0 0 var(--space-2);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 560px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 800;
+}
+
+.input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(15, 22, 38, 0.6);
+  padding: 10px 12px;
+  color: var(--text);
+}
+
+.primaryButton {
+  padding: 10px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.primaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dangerButton {
+  padding: 10px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 90, 90, 0.35);
+  background: rgba(255, 90, 90, 0.08);
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin: var(--space-2) 0 0;
+}
+
+.errorBox {
+  border: 1px solid rgba(255, 90, 90, 0.35);
+  background: rgba(255, 90, 90, 0.08);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.detailsGrid {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.membersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.memberRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: rgba(15, 22, 38, 0.6);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.memberInfo {
+  display: grid;
+  gap: 4px;
+}
+
+.memberMeta {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}

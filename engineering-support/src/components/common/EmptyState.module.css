@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid var(--border);
+  background: rgba(18, 26, 42, 0.6);
+  border-radius: 12px;
+  padding: 14px 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.actionButton {
+  margin-top: 6px;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--primary);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}

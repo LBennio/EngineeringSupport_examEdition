@@ -1,0 +1,44 @@
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.userBlock {
+  text-align: right;
+}
+
+.userName {
+  font-weight: 700;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.badge {
+  font-size: 12px;
+  opacity: 0.85;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}

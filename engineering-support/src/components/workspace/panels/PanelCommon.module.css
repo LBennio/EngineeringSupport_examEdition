@@ -1,0 +1,66 @@
+
+.panel {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.panelHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.panelSubtitle {
+  font-size: 12px;
+  opacity: 0.82;
+}
+
+.block {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 900;
+  opacity: 0.85;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.primaryButton,
+.secondaryButton,
+.dangerButton {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+}
+
+.dangerButton {
+  border: 1px solid rgba(255,80,80,0.35);
+  background: rgba(255,80,80,0.12);
+}
+
+.secondaryButton {
+  opacity: 0.92;
+}
+
+.muted {
+  opacity: 0.8;
+}

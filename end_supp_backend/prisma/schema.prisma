@@ -1,0 +1,215 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+  name     String
+  surname  String
+
+  role Role @default(BASE_USER)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships   GroupMember[]
+  PasswordReset PasswordReset[]
+  Ticket        Ticket[]
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+model PasswordReset {
+  id     String @id @default(cuid())
+  userId String
+  token  String @unique
+
+  expiresAt DateTime
+  used      Boolean  @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("password_resets")
+}
+
+model Group {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  code        String  @unique
+
+  members  GroupMember[]
+  projects Project[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([code])
+  @@map("groups")
+}
+
+model GroupMember {
+  id      String    @id @default(cuid())
+  userId  String
+  groupId String
+  role    GroupRole @default(PRODUCT_MANAGER)
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  group Group @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, groupId])
+  @@index([groupId])
+  @@map("group_members")
+}
+
+model Project {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+
+  groupId  String
+  group    Group     @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  document Document?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([groupId, title])
+  @@index([groupId])
+  @@map("projects")
+}
+
+model Document {
+  id      String @id @default(cuid())
+  title   String
+  version String
+
+  projectId String  @unique
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  sections Section[]
+  usecases UseCase[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("documents")
+}
+
+model Section {
+  id String @id @default(cuid())
+
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  type SectionType
+
+  title       String
+  description String?
+
+  content String? @db.Text
+
+  imageUrl    String?
+  mermaidCode String? @db.Text
+  altText     String?
+
+  backlogItems BacklogItem[]
+
+  order      Int
+  isUnique   Boolean @default(false)
+  isRequired Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([documentId])
+  @@map("sections")
+}
+
+model BacklogItem {
+  id String @id @default(cuid())
+
+  sprintNumber String
+
+  useCase   UseCase @relation(fields: [usecaseId], references: [id], onDelete: Cascade)
+  usecaseId String
+
+  Section   Section? @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sectionId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sectionId])
+  @@index([usecaseId])
+  @@map("backlog_items")
+}
+
+model UseCase {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  specification UseCaseSpecification?
+  BacklogItem   BacklogItem[]
+
+  @@map("use_cases")
+}
+
+model UseCaseSpecification {
+  useCaseId String  @id
+  useCase   UseCase @relation(fields: [useCaseId], references: [id], onDelete: Cascade)
+
+  primaryActors       String[]
+  secondaryActors     String[]
+  preconditions       String[]
+  primarySequence     String
+  postConditions      String[]
+  alternativeSequence String?
+}
+
+model Ticket {
+  id      String @id @default(cuid())
+  message String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: NoAction)
+
+  @@map("tickets")
+}
+
+enum Role {
+  ADMIN
+  BASE_USER
+  UPGRADED_USER
+  GUEST
+}
+
+enum GroupRole {
+  OWNER
+  PRODUCT_MANAGER
+  SOFTWARE_ENGINEER
+}
+
+enum SectionType {
+  DESCRIPTION
+  LIST_OF_USE_CASES
+  BACKLOG_TABLE
+  LIST_OF_SPECIFICATIONS
+  TABLE_OF_CONTENTS
+  DIAGRAM
+}
